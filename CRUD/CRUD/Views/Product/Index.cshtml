@@ -1,0 +1,33 @@
+﻿@inject ITranslator translator
+@model ProductIndexViewModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Description ENG</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{int No = 1; }
+        @foreach (Product item in Model.Products)
+        {
+        <tr>
+            <th scope="row">@No</th>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@translator.TranslateText(@item.Description, "en")</td>
+            <td>@item.Price ₼</td>
+            <td><a asp-controller="product" asp-action="update" asp-route-ProductId="@item.Id"><i class="fas fa-edit"></i></a></td>
+            <td><a asp-controller="product" asp-action="delete" asp-route-ProductId="@item.Id"><i class="fas fa-trash-alt"></i></a></td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+<a class="btn btn-primary mt-2 ml-auto" asp-controller="product" asp-action="create">Add Product</a>
+

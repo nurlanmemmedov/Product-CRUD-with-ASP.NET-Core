@@ -1,0 +1,26 @@
+﻿/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+td a{
+    color: inherit !important;
+}
+
+.fa-trash-alt{
+    color: red !important;
+}
+.fa-edit{
+    color: orange;
+}
+
+.table thead th {
+    border-top: none;
+}
